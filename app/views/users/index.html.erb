@@ -1,0 +1,44 @@
+
+<h1 class="text-center mt-4">Bloggers</h1>
+<div class="apple_pagination mb-4">
+  <%= will_paginate @users, :container => false %>
+</div>
+
+
+<div class="container">
+ 
+  <%if @users.any?%>
+    <%@users.each  do |user|%>
+      <div class="card text-center m-5">
+        <div class="card-header">
+          <%=user.username%>
+        </div>
+        <div class="card-body">
+            <%=gravatar_for user, size: 100%>
+            <p class="text-center m-2"> <%=pluralize(user.articles.count, "article")%></p>
+            <div class="text-center">
+                <%= link_to  "View Profile", user_path(user), class:"btn btn-outline-success" %>
+                <%if logged_in?%>
+                    <%if current_user.admin?%>
+                      <%= link_to  "Delete Profile", user_path(user), class:"btn btn-outline-danger",method: :delete, data:{confirm:"Are you sure?"} %>
+                    <%end%>
+                    <%if user == current_user%>
+                      <%= link_to  "Edit Profile", edit_user_path(user), class:"btn btn-outline-primary" %>
+                    <%end%>
+                <%end%>
+                
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+          <small>Joined <%=time_ago_in_words(user.created_at)%></small>
+        </div>
+      </div>
+    <%end%>
+  <%else%>
+    <h3 class="text-center mt-5">We need some bloggers</h3>
+    <div class=text-center>
+      <%= link_to  "Sign Up!", signup_path, class:"btn btn-outline-primary" %>
+    </div>
+  <%end%>
+</div>
+

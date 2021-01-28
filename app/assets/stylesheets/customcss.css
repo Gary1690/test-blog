@@ -1,0 +1,71 @@
+
+
+.navbar{
+  background-color: black
+}
+
+.nav-link{
+  color:white
+}
+
+.navbar-brand{
+  color:white
+}
+
+.home-container{
+  margin-top: 3em;
+}
+
+.jumbotron-custom {
+  background-image: asset-url('images/jumbo.jpg'); 
+  background-image: url(/assets/jumbo.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white; 
+  width: 100%;
+  height: 100%;
+  padding: 3em;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: lightgray;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+.apple_pagination {
+  text-align: center;
+  padding: 1em;
+  cursor: default; }
+  .apple_pagination a, .apple_pagination span {
+    padding: 0.2em 0.3em; }
+  .apple_pagination .disabled {
+    color: #aaaaaa; }
+  .apple_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background-color: #bebebe;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
+  .apple_pagination a {
+    text-decoration: none;
+    color: black; }
+  .apple_pagination a:hover, .apple_pagination a:focus {
+    text-decoration: underline; 
+  
+  }
